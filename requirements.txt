@@ -1,1 +1,2 @@
+coloredlogs
 wheel>=0.22
