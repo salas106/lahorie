@@ -12,11 +12,14 @@ Lahorie
 :target: https://pypi.python.org/pypi/lahorie
 
 
-Multiple irc bots for gazelle based torrents
+This project presents some plugins based bots for managing an irc chat in a gazelle based tracker.
 
 
 Features
 --------
 
-* TODO
+* Asyncio based
+* RFC1459 compliant
+* modules based
+* aims 100% code coverage
 
