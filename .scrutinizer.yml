@@ -1,164 +1,265 @@
-checks:
-    python:
-        variables_unused_variable: true
-        variables_unused_import: true
-        variables_unused_wildcard_import: true
-        variables_used_before_assignment: true
-        design_abstract_class_little_used: true
-        imports_import_self: true
-        typecheck_redundant_keyword_arg: true
-        variables_global_variable_not_assigned: true
-        variables_unused_argument: true
-        design_interface_not_implemented: true
-        exceptions_pointless_except: true
-        format_superfluous_parens: true
-        design_abstract_class_not_used: true
-        basic_useless_else_on_loop: true
-        basic_unreachable: true
-        basic_unnecessary_pass: true
-        basic_unnecessary_lambda: true
-        basic_pointless_string_statement: true
-        basic_pointless_statement: true
-        basic_expression_not_assigned: true
-        variables_global_statement: true
-        variables_global_at_module_level: true
-        miscellaneous_fixme: true
-        imports_wildcard_import: true
-        format_unnecessary_semicolon: true
-        format_trailing_whitespace: true
-        format_mixed_indentation: true
-        format_multiple_statements: true
-        format_missing_final_newline: true
-        format_line_too_long:
-            max_length: '120'
-        format_bad_whitespace: true
-        format_bad_indentation:
-            indentation: '4 spaces'
-        exceptions_bare_except: true
-        classes_protected_access: true
-        classes_no_self_use: true
-        classes_no_self_argument: true
-        classes_no_init: true
-        classes_bad_mcs_method_argument: true
-        classes_bad_mcs_classmethod_argument: true
-        classes_bad_classmethod_argument: true
-        classes_attribute_defined_outside_init: true
-        basic_star_args: true
-        basic_missing_docstring: true
-        basic_invalid_name:
-            functions: '[a-z_][a-z0-9_]{2,30}$'
-            variables: '[a-z_][a-z0-9_]{2,30}$'
-            whitelisted_names: 'i,j,k,ex,Run,_'
-            constants: '(([A-Z_][A-Z0-9_]*)|(__.*__))$'
-            attributes: '[a-z_][a-z0-9_]{2,30}$'
-            arguments: '[a-z_][a-z0-9_]{2,30}$'
-            class_attributes: '([A-Za-z_][A-Za-z0-9_]{2,30}|(__.*__))$'
-            inline_vars: '[A-Za-z_][A-Za-z0-9_]*$'
-            classes: '[A-Z_][a-zA-Z0-9]+$'
-            modules: '(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$'
-            methods: '[a-z_][a-z0-9_]{2,30}$'
-        basic_empty_docstring: true
-        duplicate_code: true
-        basic_eval_used: true
-        basic_exec_used: true
-        format_lowercase_l_suffix: true
-        variables_redefined_builtin: true
-        imports_relative_import: true
-        variables_unpacking_non_sequence: true
-        variables_undefined_variable: true
-        variables_undefined_loop_variable: true
-        variables_undefined_all_variable: true
-        variables_unbalanced_tuple_unpacking: true
-        variables_redefined_outer_name: true
-        variables_redefine_in_handler: true
-        variables_no_name_in_module: true
-        variables_invalid_all_object: true
-        variables_global_variable_undefined: true
-        typecheck_unexpected_keyword_arg: true
-        typecheck_too_many_function_args: true
-        typecheck_not_callable: true
-        typecheck_no_value_for_parameter: true
-        typecheck_no_member: true
-        typecheck_missing_kwoa: true
-        typecheck_maybe_no_member: true
-        typecheck_duplicate_keyword_arg: true
-        typecheck_assignment_from_none: true
-        typecheck_assignment_from_no_return: true
-        string_unused_format_string_key: true
-        string_format_needs_mapping: true
-        string_missing_format_string_key: true
-        string_mixed_format_string: true
-        string_too_few_format_args: true
-        string_too_many_format_args: true
-        string_truncated_format_string: true
-        string_constant_anomalous_unicode_escape_in_string: true
-        string_constant_anomalous_backslash_in_string: true
-        string_bad_str_strip_call: true
-        string_bad_format_string_key: true
-        string_bad_format_character: true
-        open_mode_bad_open_mode: true
-        logging_unsupported_format: true
-        logging_too_many_args: true
-        logging_too_few_args: true
-        logging_format_truncated: true
-        imports_reimported: true
-        imports_import_error: true
-        imports_cyclic_import: true
-        exceptions_raising_string: true
-        exceptions_raising_non_exception: true
-        exceptions_raising_bad_type: true
-        exceptions_notimplemented_raised: true
-        exceptions_catching_non_exception: true
-        exceptions_bad_except_order: true
-        classes_valid_slots: true
-        classes_signature_differs: true
-        classes_non_iterator_returned: true
-        classes_no_method_argument: true
-        classes_interface_is_not_class: true
-        classes_missing_interface_method: true
-        classes_bad_staticmethod_argument: true
-        classes_bad_context_manager: true
-        classes_arguments_differ: true
-        classes_access_member_before_definition: true
-        basic_abstract_class_instantiated: true
-        basic_assert_on_tuple: true
-        basic_bad_reversed_sequence: true
-        basic_duplicate_argument_name: true
-        basic_duplicate_key: true
-        basic_init_is_generator: true
-        basic_lost_exception: true
-        basic_missing_module_attribute: true
-        basic_missing_reversed_argument: true
-        basic_not_in_loop: true
-        basic_nonexistent_operator: true
-        basic_return_arg_in_generator: true
-        basic_return_in_init: true
-        basic_return_outside_function: true
-        basic_yield_outside_function: true
-        classes_abstract_method: true
-        basic_old_raise_syntax: true
-        format_backtick: true
-        format_old_ne_operator: true
-        imports_deprecated_module: true
-        code_rating: true
-        newstyle_bad_super_call: true
-        logging_not_lazy: true
-        exceptions_broad_except: true
-        classes_super_init_not_called: true
-        classes_non_parent_init_called: true
-        classes_method_hidden: true
-        basic_function_redefined: true
-        basic_dangerous_default_value: true
 tools:
     pylint:
-        python_version: 3     # Possible values: 2, 3
+        python_version: '3'
+        enabled: true
+        config:
+            logging:
+                unsupported_format: true
+                format_truncated: true
+                too_many_args: true
+                too_few_args: true
+                not_lazy: true
+                enabled: true
+                logging_modules: logging
+            string_constant:
+                backslash_in_string: true
+                unicode_escape_in_string: true
+            format:
+                unnecessary_semicolon: true
+                bad_indentation: { indentation: '4 spaces', enabled: true }
+                mixed_indentation: true
+                old_ne_operator: true
+                lowercase_l_suffix: true
+                backtick: true
+                line_too_long: { max_length: '120', enabled: true }
+                too_many_lines: { enabled: false, max_lines: 1000 }
+                trailing_whitespace: true
+                final_newline: true
+                multiple_statements: true
+                superfluous_parens: true
+                bad_whitespace: true
+                enabled: true
+            type:
+                no_member: true
+                not_callable: true
+                maybe_no_member: true
+                assignment_from_no_return: true
+                no_value_for_parameter: true
+                too_many_function_args: true
+                duplicate_keyword_arg: true
+                unexpected_keyword_arg: true
+                redundant_keyword_arg: true
+                missing_kwoa: true
+                assignment_from_none: true
+                enabled: true
+            variables:
+                used_before_assignment: true
+                undefined_variable: true
+                undefined_all_variable: true
+                invalid_all_object: true
+                no_name_in_module: true
+                global_variable_undefined: true
+                global_variable_not_assigned: true
+                global_statement: true
+                global_at_module_level: true
+                unused_import: true
+                unused_variable: true
+                unused_argument: true
+                unused_wildcard_import: true
+                redefined_outer_name: true
+                redefined_builtin: true
+                redefine_in_handler: true
+                undefined_loop_variable: true
+                unbalanced_tuple_unpacking: true
+                unpacking_non_sequence: true
+                enabled: true
+            basic:
+                init_is_generator: true
+                return_in_init: true
+                function_redefined: true
+                not_in_loop: true
+                return_outside_function: true
+                yield_outside_function: true
+                return_arg_in_generator: true
+                nonexistent_operator: true
+                duplicate_argument_name: true
+                missing_reversed_argument: true
+                abstract_class_instantiated: true
+                bad_reversed_sequence: true
+                unreachable: true
+                dangerous_default_value: true
+                pointless_statement: true
+                pointless_string_statement: true
+                expression_not_assigned: true
+                unnecessary_pass: true
+                unnecessary_lambda: true
+                duplicate_key: true
+                deprecated_lambda: false
+                useless_else_on_loop: true
+                old_raise_syntax: true
+                exec_used: true
+                eval_used: true
+                bad_builtin: false
+                star_args: true
+                lost_exception: true
+                assert_on_tuple: true
+                blacklisted_names:
+                    enabled: false
+                    bad_names: 'foo,bar,baz,toto,tutu,tata'
+                invalid_name:
+                    functions: '[a-z_][a-z0-9_]{2,30}$'
+                    variables: '[a-z_][a-z0-9_]{2,30}$'
+                    whitelisted_names: 'i,j,k,ex,Run,_'
+                    constants: '(([A-Z_][A-Z0-9_]*)|(__.*__))$'
+                    attributes: '[a-z_][a-z0-9_]{2,30}$'
+                    arguments: '[a-z_][a-z0-9_]{2,30}$'
+                    class_attributes: '([A-Za-z_][A-Za-z0-9_]{2,30}|(__.*__))$'
+                    inline_vars: '[A-Za-z_][A-Za-z0-9_]*$'
+                    classes: '[A-Z_][a-zA-Z0-9]+$'
+                    modules: '(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$'
+                    methods: '[a-z_][a-z0-9_]{2,30}$'
+                    enabled: true
+                missing_docstring: true
+                empty_docstring: true
+                missing_module_attribute: true
+            miscellaneous:
+                fixme: true
+                invalid_encoded_data: false
+            open_mode:
+                bad_open_mode: true
+            imports:
+                wildcard_import: true
+                deprecated_module: true
+                relative_import: true
+                reimported: true
+                import_self: true
+                misplaced_future: false
+                cyclic_import: true
+                import_error: true
+            classes:
+                method_hidden: true
+                access_member_before_definition: true
+                no_method_argument: true
+                no_self_argument: true
+                interface_is_not_class: true
+                missing_interface_method: true
+                bad_context_manager: true
+                invalid_slots_object: true
+                invalid_slots: true
+                attribute_defined_outside_init: true
+                bad_staticmethod_argument: true
+                protected_access: true
+                arguments_differ: true
+                signature_differs: true
+                abstract_method: true
+                super_init_not_called: true
+                no_init: true
+                non_parent_init_called: true
+                non_iterator_returned: true
+                no_self_use: true
+                bad_classmethod_argument: true
+                bad_mcs_method_argument: true
+                bad_mcs_classmethod_argument: true
+                method_check_failed: false
+                unresolved_interface: false
+            design:
+                too_many_ancestors: false
+                too_many_instance_attributes: false
+                too_few_public_methods: false
+                too_many_public_methods: false
+                too_many_return_statements: false
+                too_many_branches: false
+                too_many_arguments: false
+                too_many_locals: false
+                too_many_statements: false
+                abstract_class_not_used: true
+                abstract_class_little_used: true
+                interface_not_implemented: true
+            similarities:
+                duplicate_code: false
+            exceptions:
+                bad_except_order: true
+                raising_bad_type: true
+                bad_exception_context: false
+                raising_non_exception: true
+                notimplemented_raised: true
+                catching_non_exception: true
+                raising_string: true
+                bare_except: true
+                broad_except: true
+                pointless_except: true
+                nonstandard_exception: false
+                binary_op_exception: false
+                unpacking_in_except: false
+            newstyle:
+                slots_on_old_class: false
+                super_on_old_class: false
+                bad_super_call: true
+                missing_super_argument: false
+                property_on_old_class: false
+                old_style_class: false
+            string:
+                bad_format_character: true
+                truncated_format_string: true
+                mixed_format_string: true
+                format_needs_mapping: true
+                missing_format_string_key: true
+                too_many_format_args: true
+                too_few_format_args: true
+                bad_str_strip_call: true
+                bad_format_string_key: true
+                unused_format_string_key: true
+        plugins: {  }
+        filter:
+            paths: {  }
+            excluded_paths: {  }
+    python_analyzer:
+        enabled: true
+        config:
+            metrics: true
+            duplication_detector:
+                enabled: true
+                min_mass: 25
+        file_extensions:
+            - .py
+        filter:
+            paths: {  }
+            excluded_paths: {  }
 build:
     environment:
         python: 3.4.1
+        hosts: {  }
+        variables: {  }
+        mysql: false
+        postgresql: false
+        redis: false
+        elasticsearch: false
+        rabbitmq: false
+        mongodb: false
+        neo4j: false
+        memcached: false
     dependencies:
-        before:
-            - sudo apt-get install python3-pip
-            - sudo pip3 install pytest pytest-cov coverage
+        before: {  }
+        override: {  }
+        after: {  }
     tests:
-        override:
-            - py.test --cov-report xml --cov lahorie test/
+        override: {  }
+        before: {  }
+        after: {  }
+        inference:
+            - tox
+    container: default
+    linked_containers: {  }
+    deployment: {  }
+    cache:
+        directories: {  }
+filter:
+    paths: {  }
+    excluded_paths: {  }
+build_failure_conditions: {  }
+application:
+    type: none
+    cache:
+        directories: {  }
+    environment:
+        python: 3.4.1
+        hosts: {  }
+        variables: {  }
+        mysql: false
+        postgresql: false
+        redis: false
+        elasticsearch: false
+        rabbitmq: false
+        mongodb: false
+        neo4j: false
+        memcached: false
