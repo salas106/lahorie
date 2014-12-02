@@ -30,7 +30,7 @@ checks:
         format_multiple_statements: true
         format_missing_final_newline: true
         format_line_too_long:
-            max_length: '79'
+            max_length: '120'
         format_bad_whitespace: true
         format_bad_indentation:
             indentation: '4 spaces'
