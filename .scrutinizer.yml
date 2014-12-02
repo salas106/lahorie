@@ -240,7 +240,6 @@ build:
                 command: python setup.py test
                 coverage:
                     file: '.coverage'
-                    config: '.coveragerc'
                     format: 'py-cc'
         before: {  }
         after: {  }
