@@ -157,7 +157,8 @@ build:
         python: 3.4.1
     dependencies:
         before:
-            - sudo pip install pytest pytest-cov coverage
+            - sudo apt-get install python3-pip
+            - sudo pip3 install pytest pytest-cov coverage
     tests:
         override:
             - py.test --cov-report xml --cov lahorie test/
