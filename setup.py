@@ -1,35 +1,72 @@
+# -*- coding: utf8 -*-
 #!/usr/bin/env python
 
+from __future__ import print_function
+from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
+import io
 import os
 import sys
-
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
-readme = open('README.rst').read()
-doclink = """
-Documentation
--------------
+import lahorie
 
-The full documentation is at http://lahorie.rtfd.org."""
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+here = os.path.abspath(os.path.dirname(__file__))
+
+
+def read(*filenames, **kwargs):
+    encoding = kwargs.get('encoding', 'utf-8')
+    sep = kwargs.get('sep', '\n')
+    buf = []
+    for filename in filenames:
+        with io.open(filename, encoding=encoding) as f:
+            buf.append(f.read())
+    return sep.join(buf)
+
+long_description = read('README.rst', 'HISTORY.rst')
+
+
+class PyTest(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        errcode = pytest.main(self.test_args)
+        sys.exit(errcode)
+
+
+class Tox(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        #import here, cause outside the eggs aren't loaded
+        import tox
+        errcode = tox.cmdline(self.test_args)
+        sys.exit(errcode)
 
 setup(
     name='lahorie',
-    version='0.1.0',
+    version=lahorie.__version__,
     description='Multiple irc bots for gazelle based torrents',
-    long_description=readme + '\n\n' + doclink + '\n\n' + history,
+    long_description=long_description,
     author='Salas 106',
     author_email='salas.106.212+lahorie@gmail.com',
     url='https://github.com/salas106/lahorie',
+    tests_require=['tox'],
+    cmdclass={'test': Tox},
     packages=[
         'lahorie',
+        'lahorie.utils',
+        'lahorie.plugins'
     ],
     package_dir={'lahorie': 'lahorie'},
     include_package_data=True,
@@ -43,11 +80,13 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
+        'Operating System :: OS Independent',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Software Development :: Libraries :: Application Frameworks',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
+    extras_require={
+        'testing': ['pytest'],
+    }
 )

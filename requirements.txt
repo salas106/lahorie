@@ -1,3 +1,7 @@
 wheel>=0.22
+tox
+pytest
+pytest-cov
+coverage==3.7.1
 coloredlogs
 pyyaml

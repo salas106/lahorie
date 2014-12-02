@@ -1,0 +1,24 @@
+box: hgen/ubuntu-trusty-python3.4@1.0.0
+
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    - virtualenv:
+      name: setup virtual environment
+
+    - pip-install:
+      requirements_file: "requirements.txt" # Optional argument.
+
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+      name: echo python information
+      code: |
+        echo "python version $(python --version) running"
+        echo "pip version $(pip --version) running"
+        pip freeze
+
+    - script:
+      name: Tox pytest
+      code: tox
