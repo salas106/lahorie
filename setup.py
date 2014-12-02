@@ -61,8 +61,8 @@ setup(
     author='Salas 106',
     author_email='salas.106.212+lahorie@gmail.com',
     url='https://github.com/salas106/lahorie',
-    tests_require=['pytest'],
-    cmdclass={'test': PyTest},
+    tests_require=['tox'],
+    cmdclass={'test': Tox},
     packages=[
         'lahorie',
         'lahorie.utils',
