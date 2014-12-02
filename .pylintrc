@@ -1,3 +1,4 @@
+
 checks:
     python:
         variables_unused_variable: true
