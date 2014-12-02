@@ -157,3 +157,5 @@ build:
         python: 3.4.1
 build:
     tests:
+        override:
+            - py.test --cov-report xml --cov lahorie test/
