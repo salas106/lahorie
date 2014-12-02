@@ -1,5 +1,6 @@
 wheel>=0.22
 tox
+flake8
 pytest
 pytest-cov
 coverage==3.7.1
