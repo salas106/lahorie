@@ -6,4 +6,4 @@ before_script:
 
 script:
    - py.test --junitxml=shippable/testresults/nosetests.xml test/
-   - which python && py.test --cov-report xml --cov lahorie tests/ && mv coverage.xml shippable/codecoverage/
+   - which python && py.test --cov-report xml --cov lahorie test/ && mv coverage.xml shippable/codecoverage/
