@@ -8,4 +8,4 @@ script:
    - which python && py.test --cov-report xml --cov lahorie test/ && mv coverage.xml shippable/codecoverage/
 after_script:
    - pip install scrutinizer-ocular
-   - ocular --access-token "your-token"
+   - ocular
