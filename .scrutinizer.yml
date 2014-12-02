@@ -155,7 +155,9 @@ tools:
 build:
     environment:
         python: 3.4.1
-build:
+    dependencies:
+        before:
+            - sudo pip install pytest pytest-cov coverage
     tests:
         override:
             - py.test --cov-report xml --cov lahorie test/
