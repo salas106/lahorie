@@ -152,3 +152,15 @@ checks:
 tools:
     pylint:
         python_version: 3     # Possible values: 2, 3
+build:
+    environment:
+        python: 3.4.1
+build:
+    tests:
+        override:
+            -
+                command: python3 setup.py test
+                coverage:
+                    file: .coverage
+                    config: .coveragerc
+                    format: py-cc
