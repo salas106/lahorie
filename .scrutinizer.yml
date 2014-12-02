@@ -203,6 +203,8 @@ tools:
         filter:
             paths: {  }
             excluded_paths: {  }
+    external_code_coverage:
+        enabled: true
     python_analyzer:
         enabled: true
         config:
@@ -233,7 +235,13 @@ build:
         override: {  }
         after: {  }
     tests:
-        override: {  }
+        override:
+            -
+            command: python setup.py test
+            coverage:
+                file: '.coverage'
+                config: '.coveragerc'
+                format: 'py-cc'
         before: {  }
         after: {  }
     container: default

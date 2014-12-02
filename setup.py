@@ -2,7 +2,7 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
-from setuptools import setup, find_packages
+from setuptools import setup
 from setuptools.command.test import test as TestCommand
 import io
 import os
@@ -56,13 +56,13 @@ class Tox(TestCommand):
 setup(
     name='lahorie',
     version=lahorie.__version__,
-    description='Multiple irc bots for gazelle based torrents',
+    description='Multiple irc bots for gazelle based tracker',
     long_description=long_description,
     author='Salas 106',
     author_email='salas.106.212+lahorie@gmail.com',
     url='https://github.com/salas106/lahorie',
-    tests_require=['tox'],
-    cmdclass={'test': Tox},
+    tests_require=['pytest'],
+    cmdclass={'test': PyTest},
     packages=[
         'lahorie',
         'lahorie.utils',
