@@ -237,11 +237,11 @@ build:
     tests:
         override:
             -
-            command: python setup.py test
-            coverage:
-                file: '.coverage'
-                config: '.coveragerc'
-                format: 'py-cc'
+                command: python setup.py test
+                coverage:
+                    file: '.coverage'
+                    config: '.coveragerc'
+                    format: 'py-cc'
         before: {  }
         after: {  }
     container: default
