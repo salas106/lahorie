@@ -236,8 +236,6 @@ build:
         override: {  }
         before: {  }
         after: {  }
-        inference:
-            - tox
     container: default
     linked_containers: {  }
     deployment: {  }
