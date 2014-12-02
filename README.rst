@@ -5,7 +5,7 @@ Lahorie
 .. image:: https://badge.fury.io/py/lahorie.png
     :target: http://badge.fury.io/py/lahorie
 
-.. image:: https://travis-ci.org/salas106/lahorie.png?branch=master
+.. image:: https://api.shippable.com/projects/547d1ebbd46935d5fbbf1a62/badge?branchName=develop
     :target: https://travis-ci.org/salas106/lahorie
 
 .. image:: https://pypip.in/d/lahorie/badge.png

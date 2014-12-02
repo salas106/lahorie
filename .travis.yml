@@ -3,7 +3,6 @@ python: 3.4
 before_script:
    - mkdir -p shippable/testresults
    - mkdir -p shippable/codecoverage
-
 script:
    - py.test --junitxml=shippable/testresults/nosetests.xml test/
    - which python && py.test --cov-report xml --cov lahorie test/ && mv coverage.xml shippable/codecoverage/
