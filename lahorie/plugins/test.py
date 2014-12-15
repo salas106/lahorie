@@ -8,14 +8,6 @@
     Intend to be modified for test version. So not versioned.
 """
 
-__author__ = 'Salas'
-__copyright__ = 'Copyright 2014 LTL'
-__credits__ = ['Salas']
-__license__ = 'MIT'
-__version__ = '0.2.0'
-__maintainer__ = 'Salas'
-__email__ = 'Salas.106.212@gmail.com'
-__status__ = 'Pre-Alpha'
 
 import irc3
 from irc3.plugins.command import command
