@@ -1,0 +1,45 @@
+irc:
+  server:
+    host : 8.8.8.8
+    port: 6666
+    ssl: False
+  bot:
+    nick: R2D2-ltl
+  users:
+    auth-bot:
+      name: coco
+      ident: coco@freenode.net
+  channels:
+    # channels the bot is going to auto-join
+    # channels name are without #
+    public:
+      -
+        name: public
+    register:
+      -
+        name: not-public
+        username: R2D2-ltl
+        userkey: a1beeb230049553240f54d5a6dab2e04
+      -
+        name: not-public-2
+        username: R2D2-ltl
+        userkey: a1beeb230049553240f54d5a6dab2e04
+  plugins:
+    -
+      name: autojoin
+      path: plugins.autojoin
+    -
+      name: point counter
+      path: plugins.pount_counter
+    -
+      name: russian echo
+      path: plugins.russian_echo
+    -
+      name: markov student
+      path: plugins.markov_student
+    -
+      name: image uploader
+      path: plugins.image_upload
+    -
+      name: social metadata
+      path: plugins.social_metadata
