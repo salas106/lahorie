@@ -1,3 +1,4 @@
+sqlalchemy
 wheel>=0.22
 tox
 pytest
