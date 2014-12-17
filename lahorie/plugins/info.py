@@ -13,7 +13,7 @@ import irc3.rfc
 from utils import sql
 
 import utils.config
-conf = utils.config.get_config(config_prefix='plugin_authentication')
+conf = utils.config.get_config(config_prefix='plugin_info')
 
 # http://docs.sqlalchemy.org/en/latest/dialects/index.html
 engine, session = sql.create_engine_session(conf['db'])
@@ -23,7 +23,7 @@ Users = Base.classes.users_main
 Permissions = Base.classes.permissions
 
 
-class UsersGreaterThan(set):
+class ListUsernameByRank(set):
     def __init__(self, min_rank, max_rank=None, init_set=None):
         if max_rank is None:
             max_rank = min_rank + 1
@@ -43,7 +43,14 @@ class UsersGreaterThan(set):
             all()
         self.union(username)
 
-high_staff_users = UsersGreaterThan(0)
+    @classmethod
+    def get_by_rank_name(cls, rank_name, init_set=None):
+        """
+        Allow a name as admin rather than an class level
+        """
+        rank_names = conf['ranks']
+        min_rank, max_rank = rank_names.get(rank_name, (0, 1))
+        cls.__init__(min_rank, max_rank, init_set)
 
 
 class User:
@@ -64,17 +71,18 @@ class User:
             self.user_class = None
             self.permission_id = None
 
-    def information(self):
-        pass  # TODO
 
-    def validate(self, irc_key):
-        if self.id is None:
-            return False, "User not found"
-        elif self.enabled != 1:
-            return False, "User disabled"
-        elif self.irc_key == '':
-            return False, "Irc key not initialized"
-        elif self.irc_key != irc_key:
-            return False, "Wrong key"
-        else:
-            return True, "Match"
+@irc3.plugin
+class Info():
+    requires = [
+        'irc3.plugins.core',
+        'plugins.info'
+    ]
+
+    @irc3.extend
+    def get_user(self, username):
+        return User(username)
+
+    @irc3.extend
+    def list_username_by_rank_name(self, rank_name):
+        return ListUsernameByRank.get_by_rank_name(rank_name)
