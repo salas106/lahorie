@@ -25,11 +25,11 @@ import sys
 import irc3
 
 # Our own utils logger and config parser
-import utils.log
-import utils.config
+import lahorie.utils.log
+import lahorie.utils.config
 
 
-logger = utils.log.get_logger('lahorie')
+logger = lahorie.utils.log.get_logger('lahorie')
 
 
 def create_irc_bot(config_path=None):
@@ -42,7 +42,7 @@ def create_irc_bot(config_path=None):
     :rtype:
     """
 
-    conf = utils.config.get_config(config_path)
+    conf = lahorie.config.get_config(config_path)
     try:
         bot_nick = conf['irc']['bot']['nick']
         server_host = conf['irc']['server']['host']
