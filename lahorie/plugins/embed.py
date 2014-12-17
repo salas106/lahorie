@@ -27,8 +27,9 @@ conf = utils.config.get_config(config_prefix='plugin_embed')
 
 
 @irc3.plugin
-class MyPlugin:
-    """A plugin is a class which take the irc-ltl-framework as argument
+class Embed:
+    """
+        A plugin is a class which take the irc-ltl-framework as argument
     """
 
     requires = [
