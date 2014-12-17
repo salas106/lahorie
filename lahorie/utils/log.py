@@ -30,7 +30,8 @@ def get_logger(name, log_path=None):
     logger.setLevel(logging.DEBUG)
     formatter_file = logging.Formatter('%(asctime)s :: %(levelname)s :: %(message)s')
     if log_path is None:
-        log_path = path.abspath(path.join(os.sep, path.dirname(__file__), path.pardir, 'logs', '{}.log'.format(name)))
+        log_path = path.abspath(path.join(os.sep, path.dirname(__file__), path.pardir,
+                                          path.pardir, 'logs', '{}.log'.format(name)))
     else:
         log_dir_path = path.dirname(log_path)
         if not os.path.exists(log_dir_path):
