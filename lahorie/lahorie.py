@@ -42,7 +42,7 @@ def create_irc_bot(config_path=None):
     :rtype:
     """
 
-    conf = lahorie.config.get_config(config_path)
+    conf = lahorie.utils.config.get_config(config_path)
     try:
         bot_nick = conf['irc']['bot']['nick']
         server_host = conf['irc']['server']['host']
