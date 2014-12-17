@@ -19,9 +19,9 @@ try:
 except ImportError:
     from yaml import Loader, Dumper
 
-import utils.log
+import lahorie.utils.log
 
-logger = utils.log.get_logger('config')
+logger = lahorie.utils.log.get_logger('config')
 
 
 def get_config(config_file_path=None, config_prefix='bot') -> dict:

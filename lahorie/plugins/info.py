@@ -10,10 +10,10 @@
 import irc3
 import irc3.rfc
 
-from utils import sql
+from lahorie.utils import sql
 
-import utils.config
-conf = utils.config.get_config(config_prefix='plugin_info')
+import lahorie.utils.config
+conf = lahorie.utils.config.get_config(config_prefix='plugin_info')
 
 # http://docs.sqlalchemy.org/en/latest/dialects/index.html
 engine, session = sql.create_engine_session(conf['db'])

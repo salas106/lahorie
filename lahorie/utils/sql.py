@@ -12,6 +12,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.sql import join
 
+__all__ = ['join', 'create_engine_session', 'auto_map_orm']
+
+
 def create_engine_session(engine_url, echo=True):
     """
     Create a sql session

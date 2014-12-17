@@ -13,9 +13,9 @@ import re
 import irc3
 import irc3.rfc
 
-import utils.config
+import lahorie.utils.config
 
-conf = utils.config.get_config(config_prefix='plugin_authentication')
+conf = lahorie.utils.config.get_config(config_prefix='plugin_authentication')
 
 
 def validate(self, irc_key):
