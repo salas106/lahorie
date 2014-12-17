@@ -60,7 +60,7 @@ class Authentication:
             valid, new_ident, new_host, reason = self.validate(username, irc_key)
             if valid:
                 self.bot.send('CHGDENT {0} {1}'.format(username, new_ident))
-                self.bot.send('CHGHOST{0} {1}'.format(username, new_host))
+                self.bot.send('CHGHOST {0} {1}'.format(username, new_host))
                 for chan in channels.sentence.replace(' ', '').split(','):
                     self.bot.send('SAJOIN {0} {1}'.format(username, chan))
 
