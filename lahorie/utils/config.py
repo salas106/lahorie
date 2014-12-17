@@ -37,7 +37,8 @@ def get_config(config_file_path=None, config_prefix='bot') -> dict:
     else:
         config_dir_path = os.path.abspath(os.path.dirname(config_file_path))
     config_file_path = path.join(config_dir_path, '{}.config.yaml'.format(config_prefix))
-    config_example_path = path.join(config_dir_path, '{}.example.yaml'.format(config_prefix))
+    config_example_path = path.abspath(path.join(os.sep, path.dirname(__file__), path.pardir,
+                                                 path.pardir, 'logs', '{}.example.yaml'.format(config_prefix)))
     try:
         with open(config_file_path, 'rb') as config_stream:
             config_dict = yaml.load(config_stream, Loader=Loader)
