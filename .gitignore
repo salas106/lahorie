@@ -7,6 +7,9 @@ config/*.config.yaml
 # logs
 logs/*.log
 
+# db file
+dbs/*.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -48,6 +51,8 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
+
+secrets
 
 # Translations
 *.mo
